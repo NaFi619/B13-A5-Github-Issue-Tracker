@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Github Issue Tracker</title>
+    <!-- Daisy UI -->
+     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!--Font---->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
+
+    <!--Style---->
+    <link rel="stylesheet" href="style.css">
+
+    <!--favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/github-logo.png">
+
+</head>
+<body>
+
+<!--Login Page Section-->
+<section class="bg-gray-400 flex justify-center items-center min-h-screen">
+   
+  <div class="w-full max-w-md">
+  <fieldset class="fieldset bg-base-200 border-base-300 rounded-box border p-8 shadow-lg">
+
+  <!--extra things-->
+  <div class="text-center">
+  <div class="flex justify-center items-center">
+  <img class="w-14 h-14 mb-4" src="assets/github-logo.png" alt="github-logo">
+  </div>
+  <h1 class="text-3xl font-semibold mb-1">GitHub Issues Tracker</h1> 
+  <h3 class="text-base font-regular mb-6">Sign in to manage your issues</h3>
+  </div>
+
+  <!--form-->
+  <label class="label">Username</label>
+  <input type="text" class="input input-bordered w-full mb-4" placeholder="Username" />
+
+  <label class="label">Password</label>
+  <input type="password" class="input input-bordered w-full mb-6" placeholder="Password" />
+
+  <button class="btn btn-primary w-full mt-2">Sign In</button>
+  </fieldset>
+  </div>
+
+</section>
+
+
+
+    <script src="index.js"></script>
+</body>
+</html>
