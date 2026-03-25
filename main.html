@@ -3,9 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Github Issue Tracker</title>
+    <!-- Daisy UI -->
+     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!--Font---->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
+
+    <!--Style---->
+    <link rel="stylesheet" href="style.css">
+
+    <!--favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/github-logo.png">
+
 </head>
 <body>
-    <h1>hello</h1>
+    <header>
+        <nav>
+        <!--navbar-->
+        <div class=" navbar bg-base-100 shadow-sm flex justify-between p-5">
+             <!--logo & text-->
+              <div class="flex gap-4">
+                 
+                <div class="flex justify-center items-center">
+                  <img class="w-9 h-9 mb-4" src="assets/github-logo.png" alt="github-logo">
+                 </div>
+                 
+                 <div class="text-center">
+                   <h1 class="text-2xl font-semibold mb-1">GitHub Issues Tracker</h1> 
+                 </div>
+
+              </div>
+
+            <!--search & new issue-->
+            <div class="flex gap-12">
+                
+                <input type="text" placeholder="Search" class="input input-bordered w-24 md:w-auto" />
+                
+                <button class="btn btn-primary">+ New Issue</button>
+            
+            </div>
+        </div>
+        </nav>
+    </header>
 </body>
 </html>

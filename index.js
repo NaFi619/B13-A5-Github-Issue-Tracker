@@ -1,6 +1,6 @@
 const button = document.getElementById('sign-in');
 
-
+// Log in Button
 button.addEventListener('click', function() {
     const pass = document.getElementById('password');
     const username = document.getElementById('username');
