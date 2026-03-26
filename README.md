@@ -1,128 +1,30 @@
-# 🌟 Welcome To (সহজ সরল সিম্পল) Assignment - 5
 
-# **📅 Deadline For 60 marks:** 9th March, 2026 (11:59 pm ⏱️)  
-#  📅 No Deadline For 50 marks  
-# **📅 Deadline For 30 marks:** Any time after 9th March.
+1️⃣ What is the difference between var, let, and const?
+Think of these as three different types of boxes to store your data in:
 
----
+const : Putting something in, lock it, and cannot swap it out for something else later. 
 
-# Assignment-05: GitHub Issues Tracker
+let : Putting something in, take it out, and replace it with something new whenever wanted. 
 
+var : This is the old way of doing things from the 90s. It has weird rules and sometimes "leaks" data into parts of your code where it doesn't belong. 
 
-### **API Endpoints:**
-###  **All Issues:** 
-  - https://phi-lab-server.vercel.app/api/v1/lab/issues 
+2️⃣ What is the spread operator (...)?
+It is literally an "unboxing" tool.
+For Example, I have an array of groceries: ['apples', 'bananas']. If I use the spread operator (...groceries), it rips off the brackets and dumps the raw items out. It’s the easiest way to copy an array or merge two lists together without accidentally connecting them.
 
+3️⃣ What is the difference between map(), filter(), and forEach()?
 
-###  **Single Issue:**
-   - https://phi-lab-server.vercel.app/api/v1/lab/issue/{id}
+forEach() is the Worker: It goes down the list and does a task for each item (like building an HTML card). It doesn't give anything back.
 
-   - Example: https://phi-lab-server.vercel.app/api/v1/lab/issue/33
+filter() is the Bouncer: It checks every item against a strict rule. If the item passes (e.g., status === "open"), it gets let into a brand new array.
 
+map() is the Translator: It takes your array, changes every single item based on instructions give it, and hands back a brand new array of the exact same size.
 
-###  **Search Issue:** https://phi-lab-server.vercel.app/api/v1/lab/issues/search?q={searchText}
+4️⃣ What is an arrow function?
+It’s just a modern, lazy (in a good way!) shorthand for writing functions.
+Instead of typing the word function() { } over and over, you just write () => { }. It saves keystrokes, looks much cleaner, and is exactly what I used for your const displayIssues = (issues) => { function!
 
-   - Example:  https://phi-lab-server.vercel.app/api/v1/lab/issues/search?q=notifications
-
-
----
-
-## 📝 Main Requirements
-
-## 🎨 Design Part
-
-## Login Page
-- Create a login page containing a logo, title, and sub-title
-- Below that, there will be 2 inputs, a sign-in button, and a demo credential to sign in. Follow the Figma for this page 
-- Styled as per Figma
-
-## Main Page: 
-
-### Navbar: 
-
-- Navbar with website logo/name on the left
-- Search input and button on the right
-
-### Tab Section like Figma: 
-
-- 3 tab ( All, Open, Closed) at the top of this section.(**All**, **Open**, **Closed**)
-
-- Below the tab, there will be an icon, the issue count, some text on the left, and an open and closed marker on the right
-
-- Responsiveness: The website should be responsive for mobile devices. It is totally up to you. 
-
-
---- 
-
-
-## ⚙️ Functionalities
-- In login page, there will be default admin credentials (username, password). You need to sign in using these credentials.
-
-- Load all issues and display as per Figma
-
-- On clicking on an open or closed tab, it will load the issues data of the related tab and show it in a display-like card in a 4-column layout like Figma. By default, it will show all data 
-
-- Each card shows:
-  - Title
-  - Description
-  - Status 
-  - Author
-  - Priority
-  - Label
-  - CreatedAt
-- Clicking on an issue  card will open a modal and show all the information about that Issue. 
-
-### 🚀 Challenges
-
-
-- Show the card Top border based on their category(open, closed), open card will have Green Boder, closed card will have a purple border on top. 
-
-- Loading spinner on data load
-
-- Show active button on changing category names
-
-- Implement Search Functionality and 8 meaningful github commit.  
-
-- Create a readme file and answer this question on your own. Don’t copy-paste from Google or any AI chatbot. 
-    - 1️⃣ What is the difference between var, let, and const?
-    - 2️⃣ What is the spread operator (...)?
-    - 3️⃣ What is the difference between map(), filter(), and forEach()?
-    - 4️⃣ What is an arrow function?
-    - 5️⃣ What are template literals?
-
-
----
-
-## 🛠️ Technology Stack
-
-- **HTML**
-- **CSS** (Vanilla/Tailwind/DaisyUI)
-- **JavaScript** (Vanilla)
-
----
-
-## 🔑 Demo Credentials
-
-```text
-Username: admin
-Password: admin123
-```
-
-
----
-
-### Optional: 
- - No need to show status: Open, Closed styles On modals. 
- - No Need to show icon on labels 
- - No need to apply styles on Priority 
---- 
-
-
-## 📤 What to submit
-
-- **GitHub Repository Link:**
-- **Live Site Link:**
-
----
-
+5️⃣ What are template literals?
+It’s the ultimate "glue" for text and variables.
+Instead of doing annoying math to combine strings like "Hello " + name + ", today is " + day, you wrap your text in backticks (`). This lets you drop variables directly into the sentence using ${ }. I used this masterfully to inject things like ${details.title} straight into your modal HTML!
 
