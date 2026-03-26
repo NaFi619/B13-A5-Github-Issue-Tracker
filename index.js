@@ -4,13 +4,43 @@ const loadAllIssues =  () => {
     .then((res) => res.json())
     .then((data) => {
       const allIssues = data.data;
+      
       displayIssues(allIssues);
     });
 };
 
+const loadOpenIssues =  () => {
+  const url = "https://phi-lab-server.vercel.app/api/v1/lab/issues";
+  fetch(url)
+    .then((res) => res.json())
+    .then((data) => {
+      const allIssues = data.data;
+      const filteredIssues = allIssues.filter((issue) => issue.status === "open"); 
+      displayIssues(filteredIssues);
+    });
+};
+
+const loadClosedIssues =  () => {
+  const url = "https://phi-lab-server.vercel.app/api/v1/lab/issues";
+  fetch(url)
+    .then((res) => res.json())
+    .then((data) => {
+      const allIssues = data.data;
+      const filteredIssues = allIssues.filter((issue) => issue.status === "closed"); 
+      displayIssues(filteredIssues);
+    });
+};
+
+
+
+
 const displayIssues = (issues) => {
   const issueContainer = document.getElementById("issue-container");
   issueContainer.innerHTML = "";
+
+  const countSpan = document.getElementById("issue-count");
+  
+  countSpan.innerText = issues.length;
 
   issues.forEach((issue) => {
     const issueDiv = document.createElement("div");
@@ -37,7 +67,7 @@ const displayIssues = (issues) => {
             status = `<img src="assets/Closed- Status .png" alt="Close-Status">`;
         }
 
-        // conditions for badge
+        //habijhabi conditions for badge
         if(issue.labels && issue.labels.includes("bug") && issue.labels.includes("help wanted")){
             badge = `<div class="rounded-xl bg-red-300 px-3 h-6 text-center text-red-500">
                   <p><i class="fa-solid fa-bug"></i> ${issue.labels[0]}</p>
@@ -102,6 +132,7 @@ const displayIssues = (issues) => {
         
         }  
 
+        // less habijhabi conditions
         else if(issue.labels && issue.labels.includes("documentation")){
             badge = `<div class="rounded-xl bg-slate-200 px-3 h-6 text-center text-slate-500">
                   <p><i class="fa-regular fa-file-lines"></i> ${issue.labels[0]}</p>
@@ -152,12 +183,60 @@ const displayIssues = (issues) => {
   });
 };
 
+const searchBox = document.getElementById("search-input");
+
+
+searchBox.addEventListener("input", function(event) {
+    const searchText = event.target.value; 
+
+    const url = "https://phi-lab-server.vercel.app/api/v1/lab/issues";
+    fetch(url)
+      .then((res) => res.json())
+      .then((data) => {
+        const allIssues = data.data;
+      
+        const lowerCaseSearch = searchText.toLowerCase();
+
+        const searchedIssues = allIssues.filter((issue) => {
+             
+             const lowerCaseTitle = issue.title.toLowerCase(); 
+             
+             return lowerCaseTitle.includes(lowerCaseSearch);
+        });
+
+        displayIssues(searchedIssues);
+      });
+});
 const allButton = document.getElementById('all-btn');
+const openButton = document.getElementById('open-btn');
+const closedButton = document.getElementById('closed-btn'); 
+const allButtons = [allButton, openButton, closedButton];
+
+const setActiveButton = (activeBtn) => {
+    
+    allButtons.forEach(btn => {
+        btn.classList.remove('bg-blue-500', 'text-white');
+        btn.classList.add('bg-gray-200', 'text-gray-700');
+    });
+
+    activeBtn.classList.remove('bg-gray-200', 'text-gray-700');
+    activeBtn.classList.add('bg-blue-500', 'text-white');
+};
+
+openButton.addEventListener('click', function() {
+  setActiveButton(openButton); 
+  loadOpenIssues();
+});   
+
+closedButton.addEventListener('click', function() {
+  setActiveButton(closedButton); 
+  loadClosedIssues();
+});
 
 allButton.addEventListener('click', function() {
-  
+  setActiveButton(allButton); 
   loadAllIssues();
 });
 
-
+setActiveButton(allButton); 
 loadAllIssues();

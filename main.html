@@ -44,7 +44,7 @@
             <!--search & new issue-->
             <div class="flex gap-12">
                 
-                <input type="text" placeholder="Search" class="input input-bordered w-24 md:w-auto" />
+                <input id="search-input" type="text" placeholder="Search" class="input input-bordered w-24 md:w-auto" />
                 
                 <button class="btn btn-primary">+ New Issue</button>
             
@@ -58,8 +58,8 @@
     <div class="rounded-xl bg-base-200 h-20 m-8 flex justify-start ">
         <div class="btn-group flex gap-4 pt-4 pl-4">
             <button id="all-btn"  class="btn w-28 h-10">All</button>
-            <button class="btn w-28 h-10">Open</button>
-            <button class="btn w-28 h-10">Closed</button>
+            <button id="open-btn" class="btn w-28 h-10">Open</button>
+            <button id="closed-btn" class="btn w-28 h-10">Closed</button>
         </div>
     </div>
     </section>
@@ -74,7 +74,7 @@
                  </div>
                  
                  <div class="">
-                   <h1 class="text-2xl font-semibold mb-1"><span>50</span> Issues</h1> 
+                   <h1 class="text-2xl font-semibold mb-1"><span id="issue-count">50</span> Issues</h1> 
                    <h1 class="text-xl font-semibold mb-1 text-slate-500">Track and manage your project issues</h1> 
                  </div>
 
